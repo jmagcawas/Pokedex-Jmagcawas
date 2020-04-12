@@ -1,8 +1,10 @@
 <h2>My Pokemons</h2>
 <ul class="pokemons">
-    <li *ngFor="let mypokemon of pokemon">
-
-     <span class="badge">{{mypokemon.name}}</span> {{mypokemon.url}}
+    <li *ngFor="let pokemon of pokemons.results">
+    
+        <span class = "badge"> {{pokemon.name}} </span>
+     
+     <!-- {{pokemon.url}} -->
      
     </li>
   </ul>
