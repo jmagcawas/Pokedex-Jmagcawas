@@ -1,4 +1,4 @@
-<h2>My Pokemons</h2>
+<h2>POKEDEX</h2>
 <!-- <button (click)="">
     previous
   </button><br>
@@ -7,15 +7,52 @@
     next
   </button> -->
 
-  <button (click)="onPrevious()">Previous</button>
+  <button *ngIf="disable" (click)="onPrevious()">Previous</button>
   <button (click)="onNext()">Next</button>
 
-<ul class="pokemons">
-    <li *ngFor="let pokemon of pokemons.results">
+<!-- <ul class="pokemons">
+    <li *ngFor="let pokemon of pokemons.results" [class.selected]="pokemon === selectedPokemon" (click)="onSelect(pokemon)">
     
         <span class = "badge"> {{pokemon.name}} </span>
      
-     <!-- {{pokemon.url}} -->
-     
     </li>
-  </ul>
+  </ul> -->
+
+  <!-- <app-hero-detail [pokemon]="selectedHero"></app-hero-detail> -->
+
+  <h3>My Pokemons</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let pokemon of pokemons.results" class="col-1-4"  (click)="onSelect(pokemon)" [class.selected]="pokemon === selectedPokemon">
+    <div class="module hero">
+      <h4 >{{pokemon.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<div>
+    <h2>Details</h2>
+</div>
+
+<div *ngIf="selectedPokemon">
+
+    <h2>{{selectedPokemon.name}}</h2>
+    <div>
+      <h4> id#: {{pokemonDetail.id}} </h4>
+      <h4> name: {{pokemonDetail.name}} </h4>
+      <h4> Ability: {{pokemonDetail.abilities}} </h4>
+      <h4> Height: {{pokemonDetail.height}} </h4>
+      <h4> Weight: {{pokemonDetail.weight}} </h4>
+
+
+    </div>
+    <!-- <h2>{{selectedPokemon.height}}</h2> -->
+
+
+    <!-- <div><span>id: </span>{{selectedHero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+      </label>
+    </div> -->
+  
+  </div>
