@@ -26,7 +26,18 @@ export class PokemonService {
   getPokemon(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.pokemonURL)
   }
-  
+  getNext(next:string):void{
+    this.pokemonURL = next;
+
+  }
+  getPrevious(previous:string):void{
+    this.pokemonURL = previous;
+    if(this.pokemonURL = " "){
+      alert('no previous pokemon')
+    }
+    
+  }
+
 //  private handleError<T> (operation = 'operation', result?: T) {
 //     return (error: any): Observable<T> => {
   

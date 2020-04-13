@@ -12,7 +12,9 @@ export class PokemonsComponent implements OnInit {
 
    pokemons: any = [];
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService) {
+
+   }
 
   ngOnInit(): void {
     this.getPokemons();
@@ -21,6 +23,15 @@ export class PokemonsComponent implements OnInit {
   getPokemons(): void {
     this.pokemonService.getPokemon()
       .subscribe(pokemons => this.pokemons = pokemons);
+  }
+
+  onNext():void{
+    this.pokemonService.getNext(this.pokemons.next);
+    this.ngOnInit();
+  }
+  onPrevious():void{
+    this.pokemonService.getPrevious(this.pokemons.previous);
+    this.ngOnInit();
   }
 
   

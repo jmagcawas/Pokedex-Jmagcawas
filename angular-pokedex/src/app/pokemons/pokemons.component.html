@@ -1,4 +1,15 @@
 <h2>My Pokemons</h2>
+<!-- <button (click)="">
+    previous
+  </button><br>
+  
+  <button (click)="">
+    next
+  </button> -->
+
+  <button (click)="onPrevious()">Previous</button>
+  <button (click)="onNext()">Next</button>
+
 <ul class="pokemons">
     <li *ngFor="let pokemon of pokemons.results">
     
