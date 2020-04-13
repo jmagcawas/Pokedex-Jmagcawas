@@ -34,6 +34,7 @@ export class PokemonsComponent implements OnInit {
       this.selectedPokemon = pokemon;
       this.pokemonService.setUrl(this.selectedPokemon.url);
       this.ngOnInit();
+      console.log(pokemon);
   }
 
   getPokemons(): void {
@@ -43,7 +44,7 @@ export class PokemonsComponent implements OnInit {
   getPokemonDetail():void{
     this.pokemonService.getPokemonDetail()
     .subscribe(pokemonDetail => this.pokemonDetail = pokemonDetail);
-    
+    console.log(this.pokemonDetail);
   }
 
 

@@ -1,5 +1,4 @@
-import{Ability} from "./ability";
-import {Deserializable} from "./deserializable.model";
+// import{Ability} from "./ability";
 
 export class PokemonDetail{
     height:number;
@@ -7,12 +6,5 @@ export class PokemonDetail{
     name:string;
     weight:number;
     type: any;
-    abilities:Ability;
-
-    deserialize(input: any): this {
-
-        Object.assign(this, input);
-        this.abilities = new Ability().deserialize(input.abilities);
-        return this;
-      }
+    abilities:any;
 }
