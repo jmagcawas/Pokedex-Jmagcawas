@@ -5,21 +5,24 @@
 .m_bottom{
     margin-bottom:15px;
 }
+.containerPadding{
+    padding: 35px;
+}
 
 .module {
     padding: 10px;
     text-align: center;
-    color: #eee;
+    color: #FECA1B;
     max-height: 120px;
     min-width: 120px;
-    background-color: #3f525c;
+    background-color: #EF5350;
     border-radius: 2px;
     margin-bottom: 10px;
   }
 .module:hover {
-    background-color: #EEE;
+    background-color: #FECA1B;
     cursor: pointer;
-    color: #607d8b;
+    color: #EF5350;
 }
 
 .detailbox{
@@ -31,86 +34,9 @@
 }
 
 .img{
-    height: 100px;
-    width: 100px;
-    
-}
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
 
-  /* [class*='col-'] {
-  float: left;
-  padding-right: 20px;
-  padding-bottom: 20px;
 }
-[class*='col-']:last-of-type {
-  padding-right: 0;
-}
-a {
-  text-decoration: none;
-}
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-h3 {
-  text-align: center;
-  margin-bottom: 0;
-}
-h4 {
-  position: relative;
-}
-.grid {
-  margin: 0;
-}
-.col-1-4 {
-  width: 25%;
-}
-
-.selected {
-    background-color: #010166;
-    color: white;
-}
-
-.detail{
-    height: auto;
-    width: auto;
-    border:1px solid black;
-    padding: 8px;
-    border-radius: 5px;
-    position: absolute;
-    top:750px;
-}
-  
-.module {
-  padding: 20px;
-  text-align: center;
-  color: #eee;
-  max-height: 120px;
-  min-width: 120px;
-  background-color: #3f525c;
-  border-radius: 2px;
-}
-.module:hover {
-  background-color: #EEE;
-  cursor: pointer;
-  color: #607d8b;
-}
-.grid-pad {
-  padding: 10px 0;
-}
-.grid-pad > [class*='col-']:last-of-type {
-  padding-right: 20px;
-}
-@media (max-width: 600px) {
-  .module {
-    font-size: 10px;
-    max-height: 75px; }
-}
-@media (max-width: 1024px) {
-  .grid {
-    margin: 0;
-  }
-  .module {
-    min-width: 60px;
-  }
-} */

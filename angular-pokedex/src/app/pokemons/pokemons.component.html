@@ -28,7 +28,7 @@
     </div> 
   </div> -->
 
-  <div class="container ">
+  <div class="container">
     <div class="row justify-content-center">
         <div class="header">
             <h1>POKEDEX</h1>
@@ -50,22 +50,27 @@
               </div>
          </div>
      </div>
+    </div>
+    
+    <div class="container containerPadding" *ngIf="selectedPokemon">
+     <div class="row detailbox">
 
-     <div class="row detailbox" >
-        <div *ngIf="selectedPokemon">
-          <h2>{{selectedPokemon.name}}</h2>
-          <h4> id#: {{pokemonDetail.id}} </h4>
-          <h4> Type: <span *ngFor="let res of pokemonDetail.types">{{pokemonDetail.types.length > 1 ? res.type.name + ',' : res.type.name }}</span> </h4>
-          <!-- <h4> Type: <span *ngFor="let res of pokemonDetail.types">{{res.types.name }}</span> </h4> -->
-          <h4> name: {{pokemonDetail.name}} </h4>
-          <h4> Ability: <span *ngFor="let res of pokemonDetail.abilities">{{pokemonDetail.abilities.length > 1 ? res.ability.name + ',' : res.ability.name }}</span> </h4>
-          <!-- <h4> Ability: <span *ngFor="let res of pokemonDetail.abilities">{{res.ability.name}}</span> </h4> -->
-          <h4> Height: {{pokemonDetail.height}} </h4>
-          <h4> Weight: {{pokemonDetail.weight}} </h4>
-          <!-- <span *ngFor="let res of pokemonDetail.sprites"><img src="{{res.front_default}}" alt="{{pokemonDetail.name}}" class="img"></span> -->
-            
-        </div>
+          <div class="col-md-6">
+                <h2>{{selectedPokemon.name}}</h2>
+                <h4> id#: {{pokemonDetail.id}} </h4>
+                <h4> Type: <span *ngFor="let res of pokemonDetail.types">{{pokemonDetail.types.length > 1 ? res.type.name + ',' : res.type.name }}</span> </h4>
+                <h4> Name: {{pokemonDetail.name}} </h4>
+                <h4> Ability: <span *ngFor="let res of pokemonDetail.abilities">{{pokemonDetail.abilities.length > 1 ? res.ability.name + ',' : res.ability.name }}</span> </h4>
+                <h4> Height: {{pokemonDetail.height}} </h4>
+                <h4> Weight: {{pokemonDetail.weight}} </h4>
+          </div>
+
+          <div class="col-md-6 text-center">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonDetail.id}}.png" alt="sprite" class="img">
+          </div>
+
      </div>
-  </div>
+    </div>
+
 
   

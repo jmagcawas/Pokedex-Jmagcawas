@@ -7,4 +7,5 @@ export class PokemonDetail{
     weight:number;
     type: any;
     abilities:any;
+    sprite:any;
 }
