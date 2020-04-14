@@ -29,9 +29,9 @@
   </div> -->
 
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center m_bottom">
         <div class="header">
-            <h1>POKEDEX</h1>
+             <img src="./assets/pokemon-logo.png" alt="logo">
         </div>
         
     </div>
@@ -46,7 +46,8 @@
      <div class="row">
          <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let pokemon of pokemons.results" (click)="onSelect(pokemon)" [ngClass]="selectedPokemon ? 'selected' : '' ">
              <div class="module">
-                <h4>{{pokemon.name}}</h4>
+                <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonDetail.id}}.png" alt="sprite" class="img"> -->
+                <h4>{{pokemon.name}}</h4>  
               </div>
          </div>
      </div>
@@ -55,17 +56,17 @@
     <div class="container containerPadding" *ngIf="selectedPokemon">
      <div class="row detailbox">
 
-          <div class="col-md-6">
-                <h2>{{selectedPokemon.name}}</h2>
-                <h4> id#: {{pokemonDetail.id}} </h4>
-                <h4> Type: <span *ngFor="let res of pokemonDetail.types">{{pokemonDetail.types.length > 1 ? res.type.name + ',' : res.type.name }}</span> </h4>
-                <h4> Name: {{pokemonDetail.name}} </h4>
-                <h4> Ability: <span *ngFor="let res of pokemonDetail.abilities">{{pokemonDetail.abilities.length > 1 ? res.ability.name + ',' : res.ability.name }}</span> </h4>
-                <h4> Height: {{pokemonDetail.height}} </h4>
-                <h4> Weight: {{pokemonDetail.weight}} </h4>
+          <div class="col-md-6 detail-background">
+                <h2>{{selectedPokemon.name | uppercase}}</h2>
+                <span class="textcolor">id#</span><h4> {{pokemonDetail.id}} </h4>
+                <span class="textcolor"> Type </span><h4><span *ngFor="let res of pokemonDetail.types">{{pokemonDetail.types.length > 1 ? res.type.name + ' ' : res.type.name }}</span> </h4>
+                <span class="textcolor"> Name </span><h4>{{pokemonDetail.name}} </h4>
+                <span class="textcolor"> Ability </span><h4><span *ngFor="let res of pokemonDetail.abilities">{{pokemonDetail.abilities.length > 1 ? res.ability.name + ' ' : res.ability.name }}</span> </h4>
+                <span class="textcolor"> Height </span><h4>{{pokemonDetail.height}} </h4>
+                <span class="textcolor"> Weight </span><h4>{{pokemonDetail.weight}} </h4>
           </div>
 
-          <div class="col-md-6 text-center">
+          <div class="col-md-6 text-center imagePadding">
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonDetail.id}}.png" alt="sprite" class="img">
           </div>
 

@@ -6,37 +6,57 @@
     margin-bottom:15px;
 }
 .containerPadding{
-    padding: 35px;
+    padding: 30px;
 }
 
 .module {
     padding: 10px;
     text-align: center;
-    color: #FECA1B;
+    color: rgb(255, 255, 255);
     max-height: 120px;
     min-width: 120px;
-    background-color: #EF5350;
+    background-color: #E91515;
     border-radius: 2px;
     margin-bottom: 10px;
   }
 .module:hover {
-    background-color: #FECA1B;
+    background-color: rgb(182, 0, 0);
     cursor: pointer;
-    color: #EF5350;
+    color: rgb(255, 255, 255);
 }
 
 .detailbox{
  border: 1px solid #3f525c;
  border-radius: 5px;
- background-color: #d6d6d6;
- padding: 10px;
- height: 450px;
+ background-color: #ffffff;
 }
 
 .img{
-    border: 1px solid #ddd;
-    border-radius: 4px;
+
     padding: 5px;
     width: 150px;
+    position: absolute;
+    top:35%;
+    left: 35%;
 
+}
+
+.detail-background{
+    background-color: #30A7D7;
+    padding: 30px;
+}
+
+.imagePadding{
+    padding-top: 150px;
+    background-color: #F8C508 ;
+}
+
+/* .imagePadding{
+    position: relative;
+    top:50%;
+    left:50%;
+} */
+
+.textcolor{
+    color:white;
 }

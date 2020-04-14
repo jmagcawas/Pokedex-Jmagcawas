@@ -21,6 +21,7 @@
             "aot": true,
             "assets": [
               "src/assets/FavIconPokeball.png",
+              "src/assets/pokemon-logo.png",
               "src/assets"
             ],
             "styles": [
