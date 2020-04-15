@@ -1,0 +1,19 @@
+<div class="container containerPadding">
+    <div class="row detailbox">
+
+         <div class="col-md-6 detail-background">
+               <!-- <h2>{{selectedPokemon.name | uppercase}}</h2> -->
+               <span class="textcolor">id#</span><h4> {{pokemonDetail.id}} </h4>
+               <span class="textcolor"> Type </span><h4><span *ngFor="let res of pokemonDetail.types">{{pokemonDetail.types.length > 1 ? res.type.name + ' ' : res.type.name }}</span> </h4>
+               <span class="textcolor"> Name </span><h4>{{pokemonDetail.name}} </h4>
+               <span class="textcolor"> Ability </span><h4><span *ngFor="let res of pokemonDetail.abilities">{{pokemonDetail.abilities.length > 1 ? res.ability.name + ' ' : res.ability.name }}</span> </h4>
+               <span class="textcolor"> Height </span><h4>{{pokemonDetail.height}} </h4>
+               <span class="textcolor"> Weight </span><h4>{{pokemonDetail.weight}} </h4>
+         </div>
+
+         <div class="col-md-6 text-center imagePadding">
+               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonDetail.id}}.png" alt="sprite" class="img">
+         </div>
+
+    </div>
+   </div>

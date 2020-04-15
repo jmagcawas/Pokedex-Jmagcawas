@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Pokemon } from '../pokemon';
 import{PokemonDetail} from '../pokemonDetail';
 import { PokemonService } from '../pokemon.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-pokemons',
@@ -13,57 +13,43 @@ export class PokemonsComponent implements OnInit {
 
    pokemons: any = [];
 
-   pokemonDetail:any = [];
-
    selectedPokemon:Pokemon;
 
    disable:boolean = false;
 
-  constructor(private pokemonService: PokemonService) {
+  constructor(private pokemonService: PokemonService,
+    private pokemonRouter: Router) {
 
    }
 
   ngOnInit(): void {
     this.getPokemons();
-    this.getPokemonDetail();
     
   }
-
   
   onSelect(pokemon:Pokemon):void{
       this.selectedPokemon = pokemon;
       this.pokemonService.setUrl(this.selectedPokemon.url);
-      this.ngOnInit();
-      console.log(pokemon);
+      // this.pokemonService.setSelectedPokemon(this.selectedPokemon);
+      this.pokemonRouter.navigate(['/pokemondetail', this.selectedPokemon.name]);
+      console.log(this.pokemonService);
   }
 
   getPokemons(): void {
     this.pokemonService.getPokemon()
       .subscribe(pokemons => this.pokemons = pokemons);
   }
-  getPokemonDetail():void{
-    this.pokemonService.getPokemonDetail()
-    .subscribe(pokemonDetail => this.pokemonDetail = pokemonDetail);
-    console.log(this.pokemonDetail);
-  }
-
 
 
   onNext():void{
     this.pokemonService.getNext(this.pokemons.next);
     this.ngOnInit();
     this.disable = true;
-    // if(this.pokemons.next = " "){
-    //   alert('no next pokemon')
-    // }
+
   }
   onPrevious():void{
     this.pokemonService.getPrevious(this.pokemons.previous);
     this.ngOnInit();
-    
-    // if(this.pokemons.previous = " "){
-    //   alert('no previous pokemon')
-    // }
   }
 
   

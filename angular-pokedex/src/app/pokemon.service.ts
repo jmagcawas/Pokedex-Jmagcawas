@@ -25,7 +25,7 @@ export class PokemonService {
 
   private pokemonDetailURL = "https://pokeapi.co/api/v2/pokemon/1";  // URL to web api
 
- 
+  private currentPokemon:any = null;
 
   getPokemon(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.pokemonURL)
@@ -35,6 +35,8 @@ export class PokemonService {
     return this.http.get<PokemonDetail[]>(this.pokemonDetailURL)
   }
 
+
+
   setUrl(value:string){
     this.pokemonDetailURL = value;
   }
@@ -42,8 +44,18 @@ export class PokemonService {
   getNext(next:string):void{
     this.pokemonURL = next;
   }
+
+
   getPrevious(previous:string):void{
     this.pokemonURL = previous;
+  }
+
+  setSelectedPokemon(pokemonVar: any) {
+    this.currentPokemon = pokemonVar;
+  }
+
+  getSelectedPokemon(): Observable<Pokemon[]>{
+    return this.currentPokemon;
   }
 
 
