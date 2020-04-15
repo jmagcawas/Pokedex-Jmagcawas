@@ -35,8 +35,6 @@ export class PokemonService {
     return this.http.get<PokemonDetail[]>(this.pokemonDetailURL)
   }
 
-
-
   setUrl(value:string){
     this.pokemonDetailURL = value;
   }
