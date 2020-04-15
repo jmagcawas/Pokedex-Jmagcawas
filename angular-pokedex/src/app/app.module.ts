@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
-
+import{FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

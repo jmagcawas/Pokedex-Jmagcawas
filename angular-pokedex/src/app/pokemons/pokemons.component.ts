@@ -17,6 +17,8 @@ export class PokemonsComponent implements OnInit {
 
    disable:boolean = false;
 
+   url:string;
+
   constructor(private pokemonService: PokemonService,
     private pokemonRouter: Router) {
 
@@ -52,6 +54,11 @@ export class PokemonsComponent implements OnInit {
     this.ngOnInit();
   }
 
+  onSearch(Input):void{
+    this.url = "https://pokeapi.co/api/v2/pokemon/" + Input;
+    this.pokemonService.setUrl(this.url);
+    this.pokemonRouter.navigate(['/pokemondetail',Input]);
+  }
   
 
 

@@ -18,6 +18,7 @@ export class PokemonDetailComponent implements OnInit {
     let name = this._actRoute.snapshot.paramMap.get('name');
     let UrlName = "https://pokeapi.co/api/v2/pokemon/" + name;
     this.pokemonService.setUrl(UrlName);
+    
     this.pokemonService.getPokemonDetail()
     .subscribe(pokemons => this.pokemonDetail = pokemons);
   }
